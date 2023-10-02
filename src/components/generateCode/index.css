@@ -1,0 +1,29 @@
+.generate-code-card {
+  background-color: #fff;
+  /* Light blue background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow effect */
+  width: 500px;
+  border: 1px dotted #0008cc;
+  text-align: center;
+  height: calc(100vh - 210px);
+  overflow: auto;
+  padding: 20px;
+}
+
+.generated-code {
+  padding: 20px;
+  background: #f0f0f0;
+  display: flex;
+  height: calc(100vh - 285px);
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.code-header {
+  display: flex;
+  margin-bottom: 10px;
+  color: #0008cc;
+  font-weight: 500;
+}

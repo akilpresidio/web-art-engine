@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: #fff;
+  padding: 0.3rem;
+  border-bottom: 2px solid #f5f0f0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  height: calc(100vh - 165px);
+  padding: 12px 24px;
+}
