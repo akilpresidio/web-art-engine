@@ -6,7 +6,7 @@
   /* Shadow effect */
   width: 500px;
   border: 1px dotted #0008cc;
-  text-align: center;
+  text-align: left;
   height: calc(100vh - 210px);
   overflow: auto;
   padding: 20px;

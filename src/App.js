@@ -11,18 +11,6 @@ function App() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(message);
-  //   fetch("http://localhost:5000/", {
-  //     method: "post",
-  //     headers: { "Content-type": "application/json" },
-  //     body: JSON.stringify({ message }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setResponse(`<p>${data.message.trim()}</p>`));
-  // };
-
   useEffect(() => {
     if (message) setLoading(false);
   }, [message]);
@@ -33,10 +21,6 @@ function App() {
         <img src={logo} height={"60px"} />
       </header>
       <div className="App-content">
-        {/* <form onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => setMessage(e.target.value)} />
-          <button type="submit">Submit</button>
-        </form> */}
         <h3>Web-Art-Engine</h3>
         <div className="main-content">
           <ImageUploaderCard
@@ -46,7 +30,6 @@ function App() {
           <Loader loading={loading} />
           <GenerateCode message={message} />
         </div>
-        {/* {console.log(response)} */}
       </div>
     </div>
   );

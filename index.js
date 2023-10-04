@@ -2,9 +2,14 @@ import express from "express";
 import cors from "cors";
 
 import OpenAIApi from "openai";
+// const configuration = new Configuration({
+//   organization: "org-dSL7SotVjN0hNzNWdECjpKYQ",
+//   apiKey: "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",
+// });
 const openai = new OpenAIApi({
-  apiKey: "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",
+  apiKey: "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",
 });
+// const response = await openai.listEngines();
 
 const app = express();
 const port = 5000;
@@ -14,15 +19,15 @@ app.use(cors()); //connect/express middleware
 app.use(express.json());
 
 app.post("/", async (req, res) => {
-  const { message } = req.body;
-  const completion = await openai.completions.create({
-    model: "gpt-3.5-turbo-instruct",
-    prompt: `${message}`,
-    max_tokens: 4000,
-    temperature: 0,
+  const { finalPrompt } = req.body;
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "user", content: finalPrompt + " without explanation" }],
+    model: "gpt-3.5-turbo",
   });
-  if (completion.choices && completion.choices[0].text) {
-    res.json({ message: completion.choices[0].text.substring(0, 4000) });
+  if (completion.choices && completion.choices[0].message.content) {
+    res.json({
+      message: completion.choices[0].message.content,
+    });
   }
 });
 

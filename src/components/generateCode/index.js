@@ -1,5 +1,5 @@
 import React from "react";
-
+import { CopyBlock, dracula } from "react-code-blocks";
 import "./index.css";
 
 const GenerateCode = ({ message }) => {
@@ -7,7 +7,17 @@ const GenerateCode = ({ message }) => {
   return (
     <div className="generate-code-card">
       <header className="code-header">Generated Code :</header>
-      <div className="generated-code">{htmlText}</div>
+      <div className="generated-code">
+        {htmlText === "" ? null : (
+          <CopyBlock
+            text={htmlText}
+            language={"jsx"}
+            showLineNumbers={true}
+            theme={dracula}
+            codeBlock
+          />
+        )}
+      </div>
     </div>
   );
 };

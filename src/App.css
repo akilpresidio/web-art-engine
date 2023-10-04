@@ -21,7 +21,6 @@
 
 .main-content {
   display: flex;
-  justify-content: space-evenly;
   height: calc(100vh - 165px);
   padding: 12px 24px;
 }

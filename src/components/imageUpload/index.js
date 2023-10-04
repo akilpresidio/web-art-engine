@@ -57,6 +57,7 @@ const ImageUploaderCard = ({ response, loaderStatus }) => {
         },
       })
         .then(function (response) {
+          // setRoboflowData(response.data);
           setFinalPrompt(PromptsGenerator(response.data));
           setLoading(false);
         })
